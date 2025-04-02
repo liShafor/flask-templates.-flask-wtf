@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if list_type not in ("ol", "ul") %}
+    <div class="alert alert-danger">Неверный формат списка</div>
+{% else %}
+<div>
+    <h3>
+        <p align="left"> Список профессий </p>
+    </h3>
+    <{{list_type}}>
+        {% for job in jobs %}
+        <li>{{job}}</li>
+        {% endfor %}
+    <{{list_type}}/>
+</div>
+{% endif %}
+{% endblock %}
